@@ -7,7 +7,7 @@ def welcome(request):
 
 def restaurant_list(request):
     context = {
-        "restaurants":Restaurant.objects.all()
+        "restaurants":Restaurant.objects.all() #here we can use filter instead of all and use the checkbox value for its value to be true
     }
     return render(request, 'list.html', context)
 
@@ -26,10 +26,10 @@ def restaurant_create(request):
         if form.is_valid():
             form.save()
             return redirect("restaurant-list")
-   
 
 
-    
+
+
     context = {
     "create_rest": form
 

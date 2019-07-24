@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Create</title>
-    </head>
-    <body>
-    	<form method="POST">
-    		{% csrf_token %}
-    		{{create_rest.as_p}}
-    		<input type="submit" value="Create">
+{% extends "base.html" %}
 
-    	</form>
-    
-    </body>
-</html>
+
+{% block title %}
+    CREATE
+{% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+    	{% csrf_token %}
+    	{{create_rest.as_p}}
+    <input type="submit" value="Create">
+    </form>
+{% endblock %}
